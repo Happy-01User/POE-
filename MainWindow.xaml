@@ -1,0 +1,117 @@
+﻿<Window x:Class="lemo3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lemo3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+
+
+
+        <Grid>
+
+            <!-- Main Card -->
+            <Border Width="700"
+                Height="360"
+                Background="White"
+                CornerRadius="15"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2.2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left Information Panel -->
+                    <Border Grid.Column="0"
+                        Background="#00A8E8"
+                        CornerRadius="15,0,0,15">
+
+                        <Grid>
+
+                            <StackPanel VerticalAlignment="Center">
+
+                               
+
+                                <TextBlock Text="WELCOME"
+                                       FontSize="28"
+                                       FontWeight="Bold"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"/>
+
+                                <TextBlock Text="Cyber Awareness System"
+                                       FontSize="16"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,10,0,0"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+                    <!-- Right Login Section -->
+                    <Grid Grid.Column="1"
+                      Margin="40">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Sign In"
+                               FontSize="32"
+                               FontWeight="Bold"
+                               Foreground="#14213D"
+                               Margin="0,0,0,35"/>
+
+                        <StackPanel Grid.Row="1">
+
+                            <TextBlock Text="Your Name"
+                                   FontSize="15"
+                                   Margin="0,0,0,8"/>
+
+                            <TextBox Name="txtVisitorName"
+                                 Height="40"
+                                 FontSize="15"
+                                 Padding="8"
+                                 BorderThickness="1.5"
+                                 BorderBrush="#00A8E8"
+                                />
+
+                        </StackPanel>
+
+                        <Button Grid.Row="2"
+                            Name="btnEnterSystem"
+                            Content="ENTER"
+                            Width="170"
+                            Height="42"
+                            Margin="0,35,0,0"
+                            HorizontalAlignment="Left"
+                            Background="#14213D"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="btnEnterSystem_Click"/>
+
+                        <TextBlock Grid.Row="3"
+                               Margin="0,30,0,0"
+                               Text="Secure • Simple • Fast"
+                               FontStyle="Italic"
+                               Foreground="Gray"/>
+
+                    </Grid>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+</Window>

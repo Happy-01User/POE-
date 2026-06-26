@@ -1,0 +1,201 @@
+﻿<Window x:Class="lemo3.Task_Assistant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lemo3"
+        mc:Ignorable="d"
+        Title="Task Assistant"
+        Height="720"
+        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F6FA">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= TOP BAR ================= -->
+
+        <Border Background="#1E293B"
+                CornerRadius="8"
+                Padding="12">
+
+            <DockPanel>
+
+                <TextBlock Text="LEMO TASK ASSISTANT"
+                           Foreground="White"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           DockPanel.Dock="Left"/>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+
+                    <Button x:Name="ChatBtn"
+                            Content="Chat"
+                            Width="110"
+                            Height="38"
+                            Margin="5"
+                            Click="ChatBtn_Click"/>
+
+                    <Button x:Name="QuizBtn"
+                            Content="Quiz"
+                            Width="110"
+                            Height="38"
+                            Margin="5"
+                            Click="QuizBtn_Click"/>
+
+                    <Button x:Name="ActivityBtn"
+                            Content="Activity"
+                            Width="110"
+                            Height="38"
+                            Margin="5"
+                            Click="ActivityBtn_Click"/>
+
+                </StackPanel>
+
+            </DockPanel>
+
+        </Border>
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      Margin="0,15,0,0">
+
+            <StackPanel>
+
+                <TextBlock Text="Create Reminder"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Margin="0,0,0,20"/>
+
+                <!-- Input Area -->
+
+                <Border Background="White"
+                        CornerRadius="10"
+                        Padding="20">
+
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Left Side -->
+
+                        <StackPanel Margin="0,0,20,0">
+
+                            <TextBlock Text="Reminder Title"
+                                       FontWeight="Bold"/>
+
+                            <TextBox x:Name="txtTitle"
+                                     Height="35"
+                                     Margin="0,5,0,15"/>
+
+                            <TextBlock Text="Description"
+                                       FontWeight="Bold"/>
+
+                            <TextBox x:Name="txtDescription"
+                                     Height="120"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     Margin="0,5,0,0"/>
+
+                        </StackPanel>
+
+                        <!-- Right Side -->
+
+                        <StackPanel Grid.Column="1">
+
+                            <TextBlock Text="Reminder Date"
+                                       FontWeight="Bold"/>
+
+                            <DatePicker x:Name="dpReminderDate"
+                                        Height="35"
+                                        Margin="0,5,0,20"/>
+
+                            <Button x:Name="btnSaveReminder"
+                                    Content="Save Reminder"
+                                    Height="45"
+                                    Margin="0,0,0,10"
+                                    FontWeight="Bold"
+                                    Background="#2563EB"
+                                    Foreground="White"
+                                    Click="btnSaveReminder_Click"/>
+
+                            <Button x:Name="btnClear"
+                                    Content="Clear Fields"
+                                    Height="45"
+                                    FontWeight="Bold"
+                                    Background="Gray"
+                                    Foreground="White"
+                                    Click="btnClear_Click"/>
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </Border>
+
+                <!-- Reminder List -->
+
+                <TextBlock Text="Saved Reminders"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Margin="0,30,0,10"/>
+
+                <Border Background="White"
+                        CornerRadius="10"
+                        Padding="15">
+
+                    <StackPanel>
+
+                        <DataGrid x:Name="ReminderGrid"
+                                  Height="250"
+                                  AutoGenerateColumns="True"
+                                  Margin="0,0,0,15"/>
+
+                        <WrapPanel HorizontalAlignment="Center">
+
+                            <Button x:Name="btnComplete"
+                                    Content="Complete"
+                                    Width="140"
+                                    Height="40"
+                                    Margin="10"
+                                    Background="ForestGreen"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    Click="btnComplete_Click"/>
+
+                            <Button x:Name="btnDelete"
+                                    Content="Delete"
+                                    Width="140"
+                                    Height="40"
+                                    Margin="10"
+                                    Background="Firebrick"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    Click="btnDelete_Click"/>
+
+                        </WrapPanel>
+
+                    </StackPanel>
+
+                </Border>
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Grid>
+
+</Window>

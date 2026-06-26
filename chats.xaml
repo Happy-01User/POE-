@@ -1,0 +1,131 @@
+﻿<Window x:Class="LEMO_PART3.ChatDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cyber Awareness Chat Assistant"
+        Height="700"
+        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#F2F4F8">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <!-- Navigation -->
+            <RowDefinition Height="Auto"/>
+            <!-- Chat Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Conversation -->
+            <RowDefinition Height="*"/>
+            <!-- Input -->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- ===================== -->
+        <!-- TOP NAVIGATION BAR -->
+        <!-- ===================== -->
+        <Border Grid.Row="0"
+                Background="#1E293B"
+                CornerRadius="8"
+                Padding="10"
+                Margin="0,0,0,10">
+
+            <DockPanel>
+
+                <TextBlock Text="LEMO"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           DockPanel.Dock="Left"/>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+
+                    <Button x:Name="btnQuiz"
+                            Content="Security Quiz"
+                            Width="130"
+                            Height="38"
+                            Margin="10,0,0,0"
+                            Click="btnQuiz_Click"/>
+
+                    <Button x:Name="btnTasks"
+                            Content="Task Assistant"
+                            Width="130"
+                            Height="38"
+                            Margin="10,0,0,0"
+                            Click="btnTasks_Click"/>
+
+                    <Button x:Name="btnHistory"
+                            Content="Activity Log"
+                            Width="130"
+                            Height="38"
+                            Margin="10,0,0,0"
+                            Click="btnHistory_Click"/>
+
+                </StackPanel>
+
+            </DockPanel>
+
+        </Border>
+
+        <!-- ===================== -->
+        <!-- CHAT HEADER -->
+        <!-- ===================== -->
+        <Border Grid.Row="1"
+                Background="#2563EB"
+                CornerRadius="8"
+                Padding="15"
+                Margin="0,0,0,10">
+
+            <TextBlock Text="Cyber Awareness Assistant"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+        </Border>
+
+        <!-- ===================== -->
+        <!-- CHAT AREA -->
+        <!-- ===================== -->
+        <Border Grid.Row="2"
+                Background="White"
+                CornerRadius="8">
+
+            <ScrollViewer x:Name="conversationScroll"
+                          VerticalScrollBarVisibility="Auto">
+
+                <StackPanel x:Name="conversationContainer"
+                            Margin="10"/>
+
+            </ScrollViewer>
+
+        </Border>
+
+        <!-- ===================== -->
+        <!-- MESSAGE INPUT -->
+        <!-- ===================== -->
+        <Grid Grid.Row="3"
+              Margin="0,10,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="txtMessage"
+                     Height="45"
+                     FontSize="16"
+                     VerticalContentAlignment="Center"
+                     Margin="0,0,10,0"/>
+
+            <Button x:Name="btnSendMessage"
+                    Grid.Column="1"
+                    Content="Send"
+                    Height="45"
+                    FontWeight="Bold"
+                    Click="btnSendMessage_Click"/>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
